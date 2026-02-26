@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>HR Management</title>
+
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f2f2f2;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #222;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* CONTAINER */
+.container {
+  width: 85%;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+/* TOP BAR */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+th {
+  background: #eee;
+}
+
+.edit {
+  background: gold;
+  border: none;
+  padding: 5px 8px;
+}
+.delete {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: white;
+  width: 400px;
+  margin: 80px auto;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 10px;
+}
+
+.modal-footer {
+  text-align: right;
+}
+.save {
+  background: green;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+}
+.cancel {
+  background: gray;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div><b>HR Management</b></div>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+  <div class="top">
+    <h2>Employee</h2>
+    <button class="add-btn" onclick="openModal()">+ Add</button>
+  </div>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Position</th>
+      <th>Action</th>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>Fatima</td>
+      <td>fatima@gmail.com</td>
+      <td>0985674321</td>
+      <td>Staff</td>
+      <td>
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>2</td>
+      <td>Gabriel</td>
+      <td>gabriel@gmail.com</td>
+      <td>0353674231</td>
+      <td>Manager</td>
+      <td>
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- MODAL FORM -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <span>New Employee</span>
+      <button onclick="closeModal()">X</button>
+    </div>
+
+    <label>Name</label>
+    <input type="text">
+
+    <label>Email</label>
+    <input type="email">
+
+    <label>Phone</label>
+    <input type="text">
+
+    <label>Position</label>
+    <select>
+      <option>Staff</option>
+      <option>Manager</option>
+      <option>CEO</option>
+    </select>
+
+    <label>Sex</label>
+    <input type="radio" name="sex"> Male
+    <input type="radio" name="sex"> Female
+
+    <div class="modal-footer">
+      <button class="save">Save</button>
+      <button class="cancel" onclick="closeModal()">Cancel</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+function openModal() {
+  document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

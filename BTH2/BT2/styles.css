@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+/* HEADER */
+header {
+  position: absolute;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  color: #ffd700;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffd700;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* HERO */
+#hero {
+  height: 100vh;
+  background-image: url("images/places/ocean.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hero-content {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 50px 70px;
+  text-align: center;
+  border-radius: 8px;
+  color: white;
+}
+
+#hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+#hero-content p {
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+#hero-content a {
+  display: inline-block;
+  background-color: #ffea00;
+  color: black;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+/* HIGHLIGHTS */
+#highlights {
+  background-color: #bfe3e3;
+  padding: 60px 0;
+  text-align: center;
+}
+
+#highlights h2 {
+  margin-bottom: 40px;
+  font-size: 24px;
+}
+
+#highlights ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+}
+
+#highlights li {
+  width: 300px;
+}
+
+#highlights img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 2px 4px 15px rgba(0,0,0,0.3);
+}
+
+#highlights p {
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+#highlights strong {
+  color: #0b6b6b;
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(to right, #111, #222);
+  padding: 30px;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+}
+
+footer i {
+  font-size: 28px;
+  color: white;
+  transition: 0.3s;
+}
+
+footer i:hover {
+  color: #ffd700;
+}
