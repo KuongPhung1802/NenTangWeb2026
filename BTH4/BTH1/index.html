@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+<meta charset="UTF-8">
+<title>Quản lý điểm sinh viên</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    padding:20px;
+}
+
+input, select{
+    padding:6px;
+    margin-right:10px;
+}
+
+button{
+    padding:6px 10px;
+}
+
+table{
+    border-collapse: collapse;
+    width:100%;
+    margin-top:20px;
+}
+
+th, td{
+    border:1px solid #ccc;
+    padding:8px;
+    text-align:center;
+}
+
+th{
+    cursor:pointer;
+}
+
+.low-score{
+    background:yellow;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Bảng điểm sinh viên</h2>
+
+<input id="name" placeholder="Họ tên">
+<input id="score" placeholder="Điểm (0-10)">
+<button id="addBtn">Thêm</button>
+
+<br><br>
+
+<input id="search" placeholder="Tìm sinh viên">
+
+<select id="filter">
+<option value="all">Tất cả</option>
+<option value="Giỏi">Giỏi</option>
+<option value="Khá">Khá</option>
+<option value="Trung bình">Trung bình</option>
+<option value="Yếu">Yếu</option>
+</select>
+
+<table>
+
+<thead>
+<tr>
+<th>STT</th>
+<th>Họ tên</th>
+<th id="scoreHeader">Điểm ▲▼</th>
+<th>Xếp loại</th>
+<th>Thao tác</th>
+</tr>
+</thead>
+
+<tbody id="tableBody"></tbody>
+
+</table>
+
+<p id="stats"></p>
+
+<!-- liên kết JS -->
+<script src="script.js"></script>
+
+</body>
+</html>

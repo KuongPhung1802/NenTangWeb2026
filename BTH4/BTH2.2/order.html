@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Đặt hàng</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#667eea,#764ba2);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
+}
+
+form{
+background:white;
+padding:30px;
+border-radius:12px;
+width:340px;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+label{
+font-weight:bold;
+font-size:14px;
+}
+
+input,select,textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:6px;
+border:1px solid #ccc;
+border-radius:6px;
+outline:none;
+transition:0.2s;
+}
+
+input:focus,select:focus,textarea:focus{
+border-color:#667eea;
+box-shadow:0 0 5px rgba(102,126,234,0.6);
+}
+
+.error{
+color:red;
+font-size:12px;
+margin-bottom:6px;
+}
+
+.counter{
+font-size:12px;
+color:gray;
+text-align:right;
+margin-bottom:8px;
+}
+
+button{
+width:100%;
+padding:10px;
+border:none;
+border-radius:6px;
+background:#667eea;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#4c5fd7;
+}
+
+#totalBox{
+margin-top:10px;
+font-weight:bold;
+text-align:center;
+color:#333;
+}
+
+#summary{
+display:none;
+background:white;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<form id="orderForm">
+
+<h2>Đặt hàng sản phẩm</h2>
+
+<label>Sản phẩm</label>
+
+<select id="product">
+<option value="">-- Chọn sản phẩm --</option>
+<option value="ao">Áo</option>
+<option value="quan">Quần</option>
+<option value="giay">Giày</option>
+</select>
+
+<span class="error" id="productError"></span>
+
+
+<label>Số lượng</label>
+
+<input type="number" id="quantity">
+
+<span class="error" id="quantityError"></span>
+
+
+<label>Ngày giao hàng</label>
+
+<input type="date" id="date">
+
+<span class="error" id="dateError"></span>
+
+
+<label>Địa chỉ giao</label>
+
+<input id="address">
+
+<span class="error" id="addressError"></span>
+
+
+<label>Ghi chú</label>
+
+<textarea id="note"></textarea>
+
+<div class="counter" id="noteCount">0/200</div>
+
+<span class="error" id="noteError"></span>
+
+
+<p>Phương thức thanh toán</p>
+
+<label><input type="radio" name="pay" value="COD"> COD</label>
+<label><input type="radio" name="pay" value="Bank"> Chuyển khoản</label>
+<label><input type="radio" name="pay" value="Wallet"> Ví điện tử</label>
+
+<span class="error" id="payError"></span>
+
+
+<div id="totalBox">
+Tổng tiền: <span id="total">0</span> VNĐ
+</div>
+
+<br>
+
+<button type="submit">Đặt hàng</button>
+
+</form>
+
+
+<div id="summary">
+
+<h3>Xác nhận đơn hàng</h3>
+
+<p id="info"></p>
+
+<button id="confirmBtn">Xác nhận</button>
+<br><br>
+<button id="cancelBtn">Hủy</button>
+
+</div>
+
+
+<script src="order.js"></script>
+
+</body>
+</html>

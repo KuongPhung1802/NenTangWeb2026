@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Form đăng ký</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#4facfe,#00f2fe);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
+}
+
+form{
+background:white;
+padding:30px;
+border-radius:12px;
+width:330px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+color:#333;
+}
+
+label{
+font-weight:bold;
+font-size:14px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:4px;
+margin-bottom:6px;
+border:1px solid #ccc;
+border-radius:6px;
+outline:none;
+transition:0.2s;
+}
+
+input:focus{
+border-color:#4facfe;
+box-shadow:0 0 4px rgba(79,172,254,0.6);
+}
+
+.error{
+color:red;
+font-size:12px;
+margin-bottom:6px;
+}
+
+.counter{
+font-size:12px;
+color:gray;
+text-align:right;
+margin-bottom:8px;
+}
+
+.password-box{
+position:relative;
+}
+
+.toggle{
+position:absolute;
+right:10px;
+top:10px;
+cursor:pointer;
+}
+
+#strengthBar{
+height:6px;
+width:0%;
+border-radius:4px;
+background:red;
+margin-bottom:10px;
+transition:0.3s;
+}
+
+button{
+width:100%;
+padding:10px;
+border:none;
+border-radius:6px;
+background:#4facfe;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#2f8cff;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+width:auto;
+margin-right:5px;
+}
+
+#success{
+text-align:center;
+color:green;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<form id="form">
+
+<h2>Đăng ký tài khoản</h2>
+
+<label>Họ và tên</label>
+<input id="fullname" maxlength="50">
+<div class="counter" id="nameCount">0/50</div>
+<span class="error" id="fullnameError"></span>
+
+
+<label>Email</label>
+<input id="email">
+<span class="error" id="emailError"></span>
+
+
+<label>SĐT</label>
+<input id="phone">
+<span class="error" id="phoneError"></span>
+
+
+<label>Mật khẩu</label>
+
+<div class="password-box">
+<input type="password" id="password">
+<span class="toggle" id="toggle">👁</span>
+</div>
+
+<div id="strengthBar"></div>
+<span class="error" id="passwordError"></span>
+
+
+<label>Xác nhận mật khẩu</label>
+<input type="password" id="confirm">
+<span class="error" id="confirmError"></span>
+
+
+<p>Giới tính</p>
+
+<label><input type="radio" name="gender" value="Nam"> Nam</label>
+<label><input type="radio" name="gender" value="Nữ"> Nữ</label>
+
+<span class="error" id="genderError"></span>
+
+<br>
+
+<label>
+<input type="checkbox" id="terms"> Đồng ý điều khoản
+</label>
+
+<span class="error" id="termsError"></span>
+
+<br>
+
+<button type="submit">Đăng ký</button>
+
+</form>
+
+<h3 id="success"></h3>
+
+<script src="register.js"></script>
+
+</body>
+</html>
